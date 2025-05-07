@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function changeEffect(){
+            liElements = document.getElementsByTagName("li");
+           [...liElements].forEach(function(value){
+            value.style.cssText = "margin: 25px; color: goldenrod"
+            })
+
+        }
+        
+
+    </script>
+</head>
+<body>
+    <ul>
+        <li>HI</li>
+        <li>Hello</li>
+        <li>By</li>
+        <li>Hola</li>
+    </ul>
+    <button onclick="changeEffect()">changeEffect</button>
+    
+</body>
+</html>

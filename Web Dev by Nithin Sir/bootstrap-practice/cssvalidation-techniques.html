@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* input:required + span{
+            display: inline;
+            color:red;
+
+        } */
+        /* input:optional + span{
+            display: none;
+        }
+        input:valid + span{
+            display: none;
+        } */
+        /* input:required{
+            border: 1px solid red;
+        }
+        input:valid{
+            border: 1px solid black;
+        }
+        input:required~div{
+            display: block;
+            color: red;
+        }
+        input:valid~div{
+            display: none;
+           
+        } */
+        .terms+span{
+            color:red;
+        }
+        .terms:checked+span{
+            color: green;
+        }
+        .terms~button{
+            display: none;
+        }
+        .terms:checked~button{
+            display: block;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <form action="">
+        
+           <dl class="row">
+    
+                <dt class="col-2">Username</dt>
+                <dd class="col-10">
+                    <input type="text" class="form-control"><span>*</span>
+                    <div>required input</div>
+                    
+                </dd>
+    
+                <dt class="col-2">Password</dt>
+                <dd class="col-10">
+                    <input type="password" class="form-control" required><span>*</span>
+                    <div>required input</div>
+                </dd>
+    
+                <dt class="col-2">Age</dt>
+                <dd class="col-10">
+                    <input type="text" class="form-control"><span>*</span>
+                    <div>required input</div>
+                </dd>
+                <dd>
+                    <input type="checkbox" class="terms" ><span>I Accept</span>
+                    <button>
+                        Submit
+                    </button>
+                </dd>
+           </dl>
+    </form>
+</body>
+</html>

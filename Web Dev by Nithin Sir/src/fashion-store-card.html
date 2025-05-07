@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        main{
+            display: grid;
+            grid-template-columns: 4fr 4fr 4fr;
+            gap: 2px;
+            height: 380px;
+        }
+        
+        .women-card{
+            background-image: url(../public/images/women-card.jpg);
+            background-size: cover; 
+            display: flex;
+            justify-content: center;
+            align-items: center;    
+        }
+        .men-card{
+            background-image: url(../public/images/men-card.jpeg);
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;   
+            
+        }
+        .kid-card{
+            background-image: url(../public/images/kid-card.jpeg);
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;   
+            
+        }
+        .card-header{
+            font-size: 50px;
+            color: white;
+            margin-bottom: 100px;
+        }
+        button{
+            padding: 15px;
+            border: none;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <main>
+
+        <div class="women-card">
+            <div class="card">
+                <div class="card-header">WOMEN</div>
+                <div> <button>Women Shop <span class="bi bi-arrow-right"></span></button></div>
+            </div>
+        </div>
+
+        <div class="men-card">
+            <div class="card">
+                <div class="card-header">MEN</div>
+                <div><button>Men Shop <span class="bi bi-arrow-right"></span></button></div>
+            </div>
+        </div>
+
+        <div class="kid-card">
+            <div class="card">
+                <div class="card-header" >KIDS</div>
+                <div><button>Men Shop <span class="bi bi-arrow-right"></span></button></div>
+            </div>
+            
+
+        </div>
+        
+    </main>
+</body>
+</html>

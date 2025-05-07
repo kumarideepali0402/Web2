@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        body{
+            height: 100vh;
+        }
+    </style>
+</head>
+<body class="bg-dark container-fluid d-flex justify-content-center align-items-center">
+    <div class="bg-white p-3 w-100 ">
+        <div class="h3 mb-4">PERSONAL EMI CALCULATOR</div>
+
+
+        <div class="mb-3">
+            <!-- 1st Row -->
+             <div class="row">
+                <div class="col"> 
+                    <label> Amount you need</label>
+                    <input id ="i1" type="text" value="500000">
+                </div>
+                <div class="col"> 
+                    <label> for</label>
+                    <input id ="i2" type="text" class="w-25" value="5">
+                    <label> years</label>
+                </div>
+                <div class="col"> 
+                    <label> Interest Rate</label>
+                    <input id ="i3" type="text" class="w-25" value="12">
+                    <label>%</label>
+                </div>
+             </div>
+            <!-- 2nd Row  -->
+             <div class="row gap-3 ">
+                <input type="range" min="500000" max="4000000" value="500000" class="col" id="r1" onchange="reflectChange1()">
+                <input type="range" min="1" max="5" value="5" class="col" id="r2" onchange="reflectChange2()">
+                <input type="range" min="10.5" max="21" value="10.5" class="col" id="r3" onchange="reflectChange3()">
+             </div>
+            <!-- 3rd Row  -->
+            <div class="row " >
+                <div class="col">
+                    <span>50,000</span>
+                    <span class="float-end">40,00,000</span>
+                </div>
+                <div class="col">
+                    <span>1 year</span>
+                    <span class="float-end">5 year</span>
+                </div>
+                <div class="col">
+                    <span>10.5</span>
+                    <span class="float-end">21%</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="d-flex justify-content-end" >
+            <button class="btn btn-primary " id = "calBtn" onclick="calValue()">Calculate</button>
+        </div>
+
+        <p id = "result">EMI Amount is : <span id="calculatedEMI" style="color:red"></span> for <span id="calculateMonth"></span>months</p>
+        <script>
+            
+            let r1 = document.getElementById("r1")
+            let r2 = document.getElementById("r2")
+            let r3 = document.getElementById("r3")
+
+            let i1 = document.getElementById("i1")
+            let i2 = document.getElementById("i2")
+            let i3 = document.getElementById("i3")
+
+            function reflectChange1(){
+                i1.value = r1.value
+                
+            }
+            function reflectChange2(){
+                i2.value = r2.value
+                
+            }
+
+            function reflectChange3(){
+               i3.value = r3.value
+                
+            }
+            function calValue() {
+                
+                p = parseFloat(i1.value)
+                n = parseInt(i2.value)
+                r = parseFloat(i3.value)
+                emi = (p*r*(Math.pow(1+r),n))/(Math.pow((1+r),(n-1)))
+
+                object = {
+                    "style" : "currency",
+                    "currency" : "INR"
+                }
+                emi = emi.toLocaleString("en-IN",object)
+                document.getElementById("calculatedEMI").textContent = emi;
+                document.getElementById("calculatedEMI").style.fontWeight= "bold";
+                document.getElementById("calculateMonth").textContent = n*12;
+
+
+            }
+
+        </script>
+
+    </div>
+    
+</body>
+</html>

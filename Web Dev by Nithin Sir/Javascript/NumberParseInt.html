@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(Number("1")) //1
+        console.log(Number("1A")) //NaN
+        console.log(Number("A1")) //NaN
+
+
+
+        console.log(parseInt("1")) //1
+        console.log(parseInt("1A")) //1
+        console.log(parseInt("A1")) //NaN
+
+        // isNaN : internally uses Number()
+        console.log(isNaN("1")) //false
+        console.log(isNaN("1A")) //true
+        console.log(isNaN("A1")) //truie
+
+        // Number.isNaN() gives true only when the input is NaN else false
+        console.log(Number.isNaN("1")) //false
+        console.log(NaN) //true
+        console.log(Number.isNaN(1)) //false
+
+
+
+        let age = prompt("Enter the age") ;
+        let ageInput = Number(age) ;
+        if(age == null) {
+            console.log("No age  entered , you entered cancel button or esc")
+        }
+        else if(age == ''){
+            console.log("No age  entered")
+        }
+        else if(isNaN(age)){
+            console.log("Please enter Correct Age")
+        }
+        else{
+            console.log(age);
+            
+
+        }
+
+
+        if(age == null) {
+            console.log("No age  entered , you entered cancel button or esc")
+        }
+        else if(age == ''){
+            console.log("No age  entered")
+        }
+        else if(Number.isNaN(age)){
+            console.log("Please enter Correct Age")
+        }
+        else{
+            console.log(age);
+        
+        }
+
+
+        let a = prompt("Enter no.")
+        let valA = Number(a)
+        let b = prompt("Enter no.")
+        let valB = Number(b)
+
+
+        if(a === null || b === null){
+            console.log("Enter  number");
+        }
+        else if(Number.isNaN(valA) || Number.isNaN(valB)) {
+            console.log("Enter valid number");
+            
+        }
+        else{
+            console.log(valA + valB);
+        }
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <title>Document</title>
+    <style>
+        header{
+            background-color: black;
+            color: white;
+            margin: 15px;
+            padding: 15px;
+        }
+        header div{
+            font-weight: bold;
+            font-size: 30px;
+        }
+        
+       
+        @media screen and (orientation:landscape){
+            header{
+                display: flex;
+                justify-content : space-around;   
+            }
+            nav span{
+             margin-right: 10px;
+            }
+            aside span{
+              margin-right: 10px;
+            }
+
+            .bi-justify{
+             display: none;
+            }
+
+
+        }
+        @media screen and (orientation:portrait){
+            header{
+                display: flex;
+                justify-content: space-between;
+
+            }
+            nav,aside{
+                display: none;
+            }
+        }
+        @media screen and (max-width:500px){
+            header{
+                background-color: greenyellow;
+            }
+        }
+        @media screen and(min-width:600px){
+            aside{
+                background-color: gray;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="store-name">
+           <div>Shopper.</div>
+        </div>
+        
+        <nav>
+             <span>Home</span> 
+             <span>Catalog</span> 
+             <span>Shop</span> 
+             <span>Pages</span> 
+             <span>Blog</span> 
+             <span>Docs</span> 
+        </nav>
+        
+        
+        
+        <aside>
+            <span class="bi bi-search"></span> 
+            <span class="bi bi-person"></span> 
+            <span class="bi bi-heart"></span> 
+            <span class="bi bi-cart2"></span> 
+        </aside>
+       
+        <span class="bi bi-justify"></span>
+
+        
+        
+
+
+    </header>
+    
+</body>
+</html>

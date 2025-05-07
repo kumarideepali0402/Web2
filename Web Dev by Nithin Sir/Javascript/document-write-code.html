@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>Hi</h1>
+    <p>Hello</p>
+    <button type="button" onclick="addContent()">Add Content</button>
+    <button type="button" onclick="deleteContent()">Delete Content</button>
+    <button type="button" onclick="innerAndTextContent()">innerAndTextContent</button>
+    <script type="text/javascript">
+        function addContent() {
+            // document.write("<h1>Welcome<h1>") # entire page gets reloaded and replaced with the content
+            // document.write("Welcome") 
+            // document.writeln("Home")
+        }
+        function deleteContent(){
+           flag = confirm("Do you want to delete  content ")
+           if(flag){
+            h1=document.querySelector("h1");
+            h1.innerHTML("<h2>Content is getting appended as child in the target element</h2>")
+            h1=document.querySelector("h1");
+            h1.outerHTML("<h2>ELement is getting replaced in place of h1 </h2>")
+           }
+           else{
+            document.querySelector("p").innerHTML("<h3>You clicked cancel</h3>")
+           }
+        }
+        function innerAndTextContent(){
+            console.log("You hve cliccked the innerAndTextContent button ") //plain text
+            flag = confirm("Do you want to delete  content ")
+           if(flag){
+            console.info("You have clicked ok")//i icon
+
+            h1=document.querySelector("h1");
+            h1.textContent="textContent's output"
+           }
+            
+           else{
+            console.log("You have clicked cancel")
+            console.warn("error occured")
+            console.err("error occured")
+            h1=document.querySelector("h1");
+            h1.innerText="textContent's output"
+           }
+
+        }
+        
+    </script>
+
+
+   
+</body>
+</html>

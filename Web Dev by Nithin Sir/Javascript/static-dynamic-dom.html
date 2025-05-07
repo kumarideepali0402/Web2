@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function addItem(){
+            div=document.querySelectorAll(".box");
+            div2=document.getElementsByClassName("box");
+
+            div1=document.querySelector("#container");
+
+            console.log(div1);
+          
+
+            pElement = document.createElement("p");
+            pElement.className='item';
+            pElement.textContent = "item3";
+
+            div1.appendChild(pElement);
+           
+            console.log("div:",div);
+            console.log("div2:",div2);
+
+        }
+        
+
+    </script>
+</head>
+<body>
+    <div id="container">
+        <p class="box">Hello</p>
+        <p class="box">World</p>
+    </div>
+    <button onclick="addItem()">Additem</button>
+    
+</body>
+</html>

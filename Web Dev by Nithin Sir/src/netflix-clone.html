@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NETFLIX-clone</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body{
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial;
+        }
+        .blur-cover{
+            background-color:rgba(0,0,0,0.6);
+            height: 100vh;
+            width:100vw;
+            margin: -8px;
+        }
+        header{
+            color:white;
+            display:flex;
+            justify-content: space-between;
+            
+        }
+
+        .header-right{
+            padding-top: 25px;
+            padding-right: 45px;
+            display:flex;
+            justify-content: space-between;
+            gap: 20px;
+            
+        }
+        .title{
+            font-size: 40px;
+            color: red;
+            font-weight: bold;
+            padding-top: 15px;
+            padding-left: 25px;
+        }
+
+        .Language{
+            padding-right: 30px; 
+            gap:35px;
+            border-radius: 15px;
+            width:112.5px;
+            padding-left:35px;
+            padding-top:8px;
+       
+        }
+        .languageshade{
+            height:31.5px;
+            background-color:rgba(0,0,0,1);
+            border:0.2px solid white;
+            border-radius: 4px;
+            
+            
+            
+        }
+
+        .Signin{
+            display:inline-block;
+            width:60px;
+            height: 25px;
+            background-color: red;
+            border-radius: 2px;
+            font-size: 14px;
+            padding-left:10px;
+            padding-top:7px;
+        }
+        main{
+            color: white;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction:column;
+            font-style: Arial;
+
+        }
+        .he1{
+            font-size: 50px;
+            font-weight:800;
+            padding-bottom: 18px;
+        }
+
+        .he2{
+            font-size:25px;
+            padding-bottom: 28px;
+        }
+        .he3{
+            font-size: 18px;
+            padding-bottom: 15px;
+        }
+        .he4{
+            display: flex;
+            /* width:500px;
+            height: 45px; */
+            /* background-color: #fff; */
+            color: white;
+            gap:10px;
+
+
+        }
+        .get-started{
+            display: flex;
+            text-align: center;
+            align-items: center;
+            background-color: red;
+            width:140px;
+            height: 45px;
+            border-radius: 5px;
+            padding-left: 20px;
+            font-size: 18px;
+        }
+        .Email-address{
+            display: inline-block;
+           align-items: center;
+            width:350px;
+            height: 30px;
+            
+            padding-left:20px;
+            padding-top: 12px;
+            color:rgb(188, 181, 181);
+            /* margin-right: 80px; */
+        }
+        .Email-address-shade{
+            background-color: rgba(0,0,0,1);
+            border:0.1px solid rgb(128, 127, 127);
+            border-radius:5px;
+        }
+        
+        
+        
+        
+    </style>
+</head>
+<body background="../public/images/banner.jpg">
+    <div class="blur-cover">
+        <header>
+           <div class="title">NETFLIX</div>
+           <div class="header-right">
+            <div class="languageshade">
+             <div class="Language">
+                <span class="bi bi-globe"></span>
+                <span>Language</span>
+                <span class="bi bi-chevron-compact-down"></span>
+                
+             </div>
+            </div>
+             <span class="Signin">Sign In</span>
+            </div>
+            
+        </header>
+        <section>
+            <main>
+                <div class="he1">Unlimited films,TV programmes and more</div>
+                <div class="he2">Watch anywhere. Cancel anytime.</div>
+                <div class="he3">Ready to watch? Enter your email to create or restart your membership.</div>
+                <div class="he4">
+                    <div class="Email-address-shade">
+                       <span class="Email-address">Email address</span>
+                    </div>
+                    <span class="get-started">
+                        <span>Get started&nbsp;</span>
+                        <span class="bi bi-chevron-compact-right"></span>
+                    </span>
+                    
+                </div>
+            </main>
+        </section>
+
+    </div>
+    
+</body>
+</html>

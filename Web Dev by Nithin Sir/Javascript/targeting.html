@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        console.log("hello");
+        
+        function changeImage(){
+            document.images[0].src="../public/images/a1.jpg"
+        }
+        function changeText(){
+            document.forms[0].elements[0].value = "_dips"
+        }
+        function changeGesture(){
+            document.getElementsByTagName("p")[0].textContent = "By Deepali"
+        }
+        function changeLocation(){
+            document.body.childNodes[9].textContent="Bangalore" //childnodes considers line as well while indexing
+        }
+        function changeVisibility(){
+            let btn = document.querySelector("#btn2")
+
+            if(document.getElementsByTagName("h1")[0].style.display == "none"){
+                document.getElementsByTagName("h1")[0].style.display = "block";
+                btn.textContent="Hide";
+            }
+            else{
+                document.getElementsByTagName("h1")[0].style.display = "none";
+                btn.textContent="Show";
+            }
+        }
+        function changeColor(){
+            document.body.style.backgroundColor="blue"
+        }
+
+        function updateText() {
+          let input = document.getElementById("realTime").value;
+          document.getElementById("realTimeP").textContent=input;
+          let para=document.getElementById("realTimeP");
+          para.style.cssText="color:green; font-size=30px; font-weight=bold";
+
+        }
+    </script>
+</head>
+<body>
+    <img src="../public/images/a3.jpg" alt="">
+    <button id="btn1" onmouseover="changeImage()">Change</button>
+    <p>Hi Deepali</p>
+    <button type="button" onclick="changeGesture()">Change Gesture</button>
+    <div>Ranchi</div>
+    <button type="button" onclick="changeLocation()">Change Location</button>
+
+    <h1>Toggle Effect</h1>
+    <button id="btn2" type="button" onclick="changeVisibility()">Hide</button>
+    <button id="btn3" onclick="changeColor()"> change bgc</button>
+
+
+    <input type="text" id="realTime" placeholder="Type something...." oninput="updateText()">
+    <p id="realTimeP"></p>
+    <form>
+        <input type="text" >
+        <button type="button" onclick="changeText()">Change</button>
+    </form>
+
+    
+</body>
+</html>

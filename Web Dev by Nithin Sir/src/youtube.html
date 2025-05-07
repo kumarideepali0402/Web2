@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+     <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background-color: white;
+          
+        }
+        .menu-bar{
+            display: flex;
+            align-items: center;
+        }
+        
+        
+        .search-bar{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+        .search{
+            border:1px solid gray;
+            width:500px;
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 20px;
+            color: gray;
+            height:20px;
+            /* padding-right: 10px; */
+            
+
+        }
+        .search-text{
+            padding-left: 10px;
+        }
+        .bi-search{
+            border-left: 1px solid gray;
+            padding-left:5px;
+            color: black;
+            
+        }
+
+        
+        .bi-mic-fill{
+            
+            padding: 5px;
+            border-radius: 50%;
+            background-color: rgb(235, 228, 228);
+            margin-left:10px;
+        }
+        .user-area span{
+            margin-right: 20px;
+
+            
+        }
+        nav ul{
+            list-style: none;
+            border-bottom: 1px solid black;
+        }
+        .yt-nav{
+            height: 100vh;
+            overflow: hidden;
+            background-color: white;
+            position: fixed;
+            
+            
+        }
+        .yt-nav:hover{
+            overflow: auto;
+            scrollbar-width: thin;
+            scrollbar-color: gray white;
+
+        }
+        main{
+            padding-left: 190px;
+
+        }
+        section{
+            display: flex;
+        }
+        
+        nav{
+            margin-left: -40px;
+            overflow: auto;
+        }
+        
+        .yt-banner{
+            padding:0px 50px 0px 50px;
+        }
+        .icon{
+            margin-right: 20px;
+        }
+        .user{
+            border: 1px solid white;
+            border-radius: 50%;
+            width: 50%;
+            background-color: purple;
+            color: white;
+            padding: 5px;
+
+        }
+        li span{
+            display: inline-block;
+            margin-left: 15px;
+        }
+        li{
+            margin-bottom: 20px;
+        }
+        article{
+            display: flex;
+            color: gray;
+            margin-bottom: 40px;
+            align-items: center;
+            padding:0px 50px 0px 50px;
+            
+        }
+        a{
+            text-decoration: none;
+            color: gray;
+        }
+        .channel-name{
+            font-size: 30px;
+            font-weight: bold;
+            color: black;
+        }
+        .subscribe-button{
+            background-color: rgb(208, 198, 198);
+            width:170px;
+            border-radius: 20px;
+            color: black;
+            height: 30px;
+            display: flex;
+            align-items: center;
+        }
+        b{
+            color: black;
+        }
+        .link a{
+            color: blue;
+        }
+        ul{
+            list-style: none;
+        }
+        .channel-logo {
+            border-radius: 50%;
+            width: 220px;
+            height: 220px;
+        }
+        .channel-nav{
+            display: flex;
+            justify-content: space-between;
+            width: 500px;
+            margin-left: 1px;
+            color: rgb(107, 102, 102);
+            font-weight: bold;
+            padding:0px 50px 0px 50px;
+            
+        }
+        .Home{
+            color: black;
+            border-bottom: 3px solid black;
+            padding-bottom: 10px;
+        }
+        .channel-nav-hr{
+            margin-top: -0.8px;
+        }
+
+        .first-video{
+            display: flex;
+
+        }
+        .Front-video{
+            display: flex;
+            border-bottom: 1px solid grey;
+            padding: 20px;
+            width:85%;
+
+        }
+
+        .vid-description{
+            color: grey;
+            margin-bottom: 20px;
+            font-size: small;
+        }
+        
+
+        iframe{
+            border-radius: 12px;
+        }
+        .first-video{
+            padding-right: 15px;
+            
+        }
+        .Front-video-heading{
+            font-weight: lighter;
+            font-size: large;  
+            margin-bottom: 20px; 
+        }
+        .front-vid-description{
+            width:90%;
+            color: gray;
+            font-size: small;
+            margin-bottom: 20px;
+        }
+        .bi-three-dots-vertical{
+            margin-left: 10px;
+        }
+        .common-vid-heading{
+            margin-top: 20px;
+        }
+        .common-heading{
+            font-weight: bold;
+            font-size: 20px;
+            padding: 20px;
+        }
+        .common-play-all{
+            margin-left:20px;
+        }
+        .description{
+            color: gray;
+            font-size: 15px;
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        .single-video{
+            width: 300px;
+        }
+        .video-panel{
+            display: flex;
+            padding: 20px;
+            width:100vh;
+            
+        }
+        .vid-description{
+            width: 208px;
+        }
+        .vid-description-first{
+            color: black;
+            font-weight: 100px;
+            margin-bottom: 12px;
+        }
+       
+
+
+     </style>
+</head>
+<body>
+    <header>
+        <div class="menu-bar">
+            <span class="bi bi-list">
+
+            </span>
+            <span >
+                <img src="../public/images/image.png" alt="">
+
+            </span>
+        </div>
+        <div class="search-bar">
+            <div class="search">
+                <span class="search-text">Search</span>
+                <span class="bi bi-search"></span>
+            </div>
+            <div class="bi bi-mic-fill"></div>
+        </div>
+        <div class="user-area">
+            <span class="bi bi-camera-video"></span>
+            <span class="bi bi-bell"></span>
+            <span class="user">D</span>
+        </div>
+    </header>
+    <section>
+        <nav class="yt-nav">
+            <ul>
+                <li class="bi bi-house "><span>Home</span></li>
+                <li class="bi bi-play-circle "><span>Shorts</span></li>
+                <li class="bi bi-collection-play "><span>Subscription</span></li>
+            </ul>
+            
+            <ul>
+                <li><b>You</b><span class="bi bi-chevron-compact-right"> </span></li>
+                <li class="bi bi-person-square"><span>channel</span> </li>
+                <li class="bi bi-clock-history"><span>History</span></li>
+                <li class="bi bi-list"><span>Playlists</span></li>
+                <li class="bi bi-play-btn"><span>Your videos</span></li>
+                <li class="bi bi-lightbulb"><span>Your courses</span></li>
+                <li class="bi bi-router-fill"><span>Your podcasts</span></li>
+                <li class="bi bi-stopwatch"><span>Watch later</span></li>
+                <li class="bi-hand-thumbs-up"><span>Liked videos</span></li>
+            </ul>
+
+            <ul>
+                <li><b>Subscriptions</b><span class="bi bi-chevron-compact-right"> </span></li>
+                <li class="bi bi-person-square"><span>channel</span> </li>
+                <li class="bi bi-clock-history"><span>History</span></li>
+                <li class="bi bi-list"><span>Playlists</span></li>
+                <li class="bi bi-play-btn"><span>Your videos</span></li>
+                <li class="bi bi-lightbulb"><span>Your courses</span></li>
+                <li class="bi bi-router-fill"><span>Your podcasts</span></li>
+                <li class="bi bi-stopwatch"><span>Watch later</span></li>
+                <li class="bi-hand-thumbs-up"><span>Liked videos</span></li>
+            </ul>
+
+            <ul>
+                <li><b>Explore</b><span class="bi bi-chevron-compact-right"> </span></li>
+                <li class="bi bi-fire"><span>Trending</span> </li>
+                <li class="bi bi-bag"><span>Shopping</span></li>
+                <li class="bi bi-music-note"><span>Music</span></li>
+                <li class="bi bi-movi"><span>Movies</span></li>
+                <li class="bi bi-hdd-network-fill"><span>Live</span></li>
+                <li class="bi bi-joystick"><span>Gaming</span></li>
+                <li class="bi bi-newspaper"><span>News</span></li>
+                <li class="bi bi-trophy"><span>Sports</span></li>
+                <li class="bi bi-lightbulb"><span>Courses</span></li>
+                <li class="bi bi-"><span>Fashion & Beauty</span></li>
+                <li class="bi bi-hdd-network"><span>Podcasts</span></li>
+            </ul>
+            <ul>
+                <li class="bi bi-gear"><span>Settings</span> </li>
+                <li class="bi bi-flag"><span>Report History</span></li>
+                <li class="bi bi-question-circle"><span>Help</span></li>
+                <li class="bi bi-chat-left"><span>Send Feedback</span></li>
+                
+            </ul>
+
+        </nav>
+        <main>
+            <div class="yt-banner">
+                <img src="../public/images/banner-yt.png" width="100%">
+            </div>
+        
+            <article>
+                <img src="../public/images/pwioilogo.png" alt="" align:left class="channel-logo">
+                <div>
+                    <ul>
+                        <li class="channel-name">
+                            PW Institute of Innovation</li>
+                        <li>@PW-IOI•7.23K subscribers•157 videos</li>
+                        <li ><a href="javascript:void()">Shaping Futures, Empowering Innovators! 🚀 <b>...more</b></a></li>
+                        <li class="link"><a href="javascript:window.open(../yt-link.html)">pwioi.com/?utm_source=Youtube&utm_medium=Social&utm_campaign=Org <b>...  and 8 more links</b> </a></li>
+                        <li class="subscribe-button">
+                            <span class="bi bi-bell"></span>
+                            <span>Subscribed</span>
+                            <span class="bi-chevron-compact-down"></span>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+            <nav class="channel-nav">
+                <span class="Home">Home</span>
+                <span>Videos</span>
+                <span>Shorts</span>
+                <span>Playlists</span>
+                <span>Community</span>
+                <span class="bi bi-search"></span>
+            </nav>
+            <hr class="channel-nav-hr">
+            <div class="Front-video">
+                <iframe  class="first-video"width="300" height="200" src="https://www.youtube.com/embed/scX-jneH0hU?si=O8c6V4nv1zUn7K32" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>       
+                <div>
+                    <span class="Front-video-heading">How to get into PW IOI? | Complete admission process <span class="bi-three-dots-vertical"></span> </span>
+
+                    <div class="front-vid-description">
+                        <span> PW Institute of Innovation </span><span> 16K views </span><span> 2 months ago </span>
+                    </div>
+                    
+                    <div class="front-vid-description">
+                        Are you aiming to join PW IOI? This video provides a detailed guide on the complete admission process, ensuring you understand each step to secure your spot at this prestigious institution....
+                    </div>
+
+                </div>
+            </div>
+            <div>
+                <div class="common-vid-heading">
+                    <span class="common-heading">All About PW IOI</span>
+                    <span class="common-play-all">
+                        <span class="bi bi-play-fill"></span>
+                        <span>Play all</span>
+                    </span>
+                </div>
+                <div class="description">  Welcome to PW IOI! Explore our playlist for talks, seminars, and workshops led by experts. Ignite <br>your passion for innovations in Technology and Management, enhance skills, and embrace</div>
+                <div class="video-panel">
+                    <div class="single-video">
+                        <div><iframe width="180" height="120" src="https://www.youtube.com/embed/MVPYoRTV438?si=9GfqTyUVkdcz57ko" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                        <div class="vid-description">
+                            <div class="vid-description-first">PW IOI AD WARS Challenge | The Task Announcement of Ad Wars </div>
+                            <div > 
+                                Institute of Innovation<br>
+                                955 views
+                                1 month ago 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-video">
+                        <div><iframe width="180" height="120" src="https://www.youtube.com/embed/D9CTsTSKx5g?si=DP_rqdbuxFaZm5OR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                        <div class="vid-description">
+                            <div class="vid-description-first">PW IOI AD WARS Challenge | The Task Announcement of Ad Wars</div>
+                            <div > 
+                                Institute of Innovation<br>
+                                955 views
+                                1 month ago 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-video">
+                        <div><iframe width="180" height="120" src="https://www.youtube.com/embed/pM3370OZ7HE?si=6wZJYb6qrTE81Qyu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                        <div class="vid-description">
+                            <div class="vid-description-first">PW IOI AD WARS Challenge | The Task Announcement of Ad Wars</div>
+                            <div > 
+                                Institute of Innovation<br>
+                                955 views
+                                1 month ago 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-video">
+                        <div><iframe width="180" height="120" src="https://www.youtube.com/embed/scX-jneH0hU?si=oaxuJkgi6E4A2uzO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                        
+                        <div class="vid-description">
+                            <div class="vid-description-first">PW IOI AD WARS Challenge | The Task Announcement of Ad Wars </div>
+                            <div > Institute of Innovation<br>
+                            955 views
+                            1 month ago </div>
+                        </div>
+                    </div>
+                    <div class="single-video">
+                        <div><iframe width="180" height="120" src="https://www.youtube.com/embed/VcDavaC5Swk?si=SVvTg-GCSHXtyZw3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                        <div class="vid-description">
+                            <div class="vid-description-first">PW IOI AD WARS Challenge | The Task Announcement of Ad Wars </div>
+                            <div > Institute of Innovation<br>
+                            955 views
+                            1 month ago </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div>
+                <div class="common-vid-heading">
+                    <span class="common-heading">School Of Management</span>
+                    <span class="common-play-all">
+                        <span class="bi bi-play-fill"></span>
+                        <span>Play all</span>
+                    </span>
+                </div>
+                <div class="video-panel">
+                    <div class="single-video">
+                        <div><iframe width="180" height="120" src="https://www.youtube.com/embed/cX9YVRmkpRE?si=qZLM9B4ChZP71tQd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                        <div class="vid-description">
+                            <div class="vid-description-first">PW IOI AD WARS Challenge | The Task Announcement of Ad Wars </div>
+                            <div > Institute of Innovation<br>
+                            955 views
+                            1 month ago </div>
+                        </div>
+                    </div>
+                    <div class="single-video">
+                        <div><iframe width="180" height="120" src="https://www.youtube.com/embed/Y7rKWmD1gNU?si=rYx3Pj3aF0o-xRiW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                        <div class="vid-description">
+                            <div class="vid-description-first">PW IOI AD WARS Challenge | The Task Announcement of Ad Wars</div>
+                            <div > Institute of Innovation<br>
+                            955 views
+                            1 month ago </div>
+                        </div>
+                    </div>
+                    <div class="single-video">
+                        <div><iframe width="180" height="120" src="https://www.youtube.com/embed/OGZ2gCZ00Kw?si=9obc0EpSel9Ua5at" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                        <div class="vid-description">
+                            <div class="vid-description-first">PW IOI AD WARS Challenge | The Task Announcement of Ad Wars  </div>
+                            <div > Institute of Innovation<br>
+                            955 views
+                            1 month ago </div>
+                        </div>
+                    </div>
+                    <div class="single-video">
+                        <div><iframe width="180" height="120" src="https://www.youtube.com/embed/aDfBV0oTfbE?si=EXq_DvGv7IFS4ALJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                        
+                        <div class="vid-description">
+                            <div class="vid-description-first">PW IOI AD WARS Challenge | The Task Announcement of Ad Wars </div>
+                            <div > Institute of Innovation<br>
+                            955 views
+                            1 month ago </div>
+                        </div>
+                    </div>
+                    <div class="single-video">
+                        <div><iframe width="180" height="120" src="https://www.youtube.com/embed/lgQRVh4FFbs?si=2azfKvjyLCuBNweV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                        <div class="vid-description">
+                            <div class="vid-description-first">PW IOI AD WARS Challenge | The Task Announcement of Ad Wars</div>
+                            <div > Institute of Innovation<br>
+                            955 views
+                            1 month ago </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </main>
+    </section>
+
+</body>
+</html>

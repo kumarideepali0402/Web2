@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    background:rgb(5, 5, 65);
+    color: #ededed;
+}
+
+.header{
+    position: fixed;
+    top:0;
+    left: 0;
+    width:100%;
+    padding: 30px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    text-decoration: none;
+    font-size: 30px;
+    color:#ededed;
+
+}
+
+.navbar a{
+    font-size: 18px;
+    font-weight: 500;
+    margin-right: 50px;
+    font-weight: lighter;
+    color:#ededed;
+    transition: 0.3s;
+    text-decoration: none;
+}
+.navbar a:hover,
+.navbar a.active{
+    color: aqua;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+.home-content{
+    max-width: 600px;
+    padding: 0 7%;
+}
+.home-content h1{
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.5;
+
+}
+.home-content h2{
+    font-size: 30px;
+    font-weight: 300px;
+    color: aqua;
+}
+
+.home-content p{
+    font-size: 19px;
+    margin: 20px 0px 40px;
+}
+.home-content .btn-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:345px;
+    height:50px;
+    background-color: transparent;
+    margin-bottom: 40px;
+}
+.btn-box a{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height:100%;
+    letter-spacing: 1.2px;
+    border: 3px solid aqua;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 19px;
+    color: #081b29;
+    font-weight: 600;
+    background-color: aqua;
+    z-index: 1;
+    overflow: hidden;
+}
+.btn-box a:hover{
+    color: aqua;
+}
+.btn-box a:nth-child(2){
+    background-color: transparent;
+    color: aqua;
+}
+
+.btn-box a:nth-child(2):hover{
+    color:#081b29 ;
+}
+
+.btn-box a:nth-child(2)::before{
+    background-color: aqua;
+
+}
+
+.btn-box a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 0;
+    background-color: #081b29;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.btn-box a:hover::before{
+    width: 100%;
+}
+
+.icon {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    width: 170px;
+    background-color: transparent;
+    
+}
+
+.icon a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50%;
+    height: 100%;
+    border: 2px solid aqua;
+    overflow: hidden;
+}
+.bi-twitter,.bi-github,.bi-linkedin{
+    color: aqua;
+}
+.icon a::before{
+    /* content: ''; */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    /* width: 0; */
+    background-color: red;
+    z-index: -1;
+    
+    
+}
+.icon a:hover::before{
+    width: 100%;
+}

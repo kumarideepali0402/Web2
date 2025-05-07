@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        function afterHover(){
+            document.querySelector("h1").style.color='red';
+        }
+        function beforeHover(){
+            document.querySelector("h1").style.color='blue';
+        }
+    </script> -->
+
+    <style>
+        h1:hover{
+            color: red;
+            font-size: 25px;
+            font-family: brush;
+            transition: 3s;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        img{
+            width: 150px;
+            height: 150px;
+            border: 3px solid black;
+            height: 100vh;
+            transition: 3s;
+        }
+        img:active{
+            height: 900px;
+            width: 900px;
+            transform: 5px;
+        }
+
+        ol li:first-child{
+            color: red;
+        }
+        ol li:last-child{
+            color: blue;
+        }
+        ol li:nth-child(even){
+            color: yellow;
+            font-size: 25px;
+        }
+        ol li:nth-child(odd){
+            color: pink;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1 onmouseover="afterHover()" onmouseleave="beforeHover()">Web Development</h1>
+    <img src="../public/images/banner.jpg" alt="">
+    <ol>
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+        <li>D</li>
+        <li>E</li>
+        <li>F</li>
+    </ol>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/styles/css/ticket-effect-min.css">
+    <!-- <style type="text/css"  media="screen">
+        dl{
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+        }
+        div{
+            height: 500px;
+            width:900px;
+            border :2px solid black;
+            background-color: rgb(184, 151, 151);
+            padding: 8px;
+        }
+
+    </style> -->
+    <style  type="text/css" media="print">
+        
+        img{
+            display: none;
+        }
+        button{
+            display: none;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="../public/images/train.jpeg" alt="">
+        <h1>Train Ticket</h1>
+        <dl>
+            <dt>DepartureDate</dt>
+            <dd>12-08-2022</dd>
+            <dt>DepartureTime</dt>
+            <dd>19:00</dd>
+        </dl>
+        <button>
+            PrintTicket
+        </button>
+    </div>
+</body>
+</html>

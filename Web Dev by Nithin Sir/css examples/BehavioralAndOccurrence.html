@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #data::first-letter{
+            color:blue;
+            font-size: 39px;
+            float: left;
+        }
+        #info::first-line{
+            color:orange; 
+        }
+        ol{
+            display: flex;
+        }
+        li{
+            list-style-type: none;
+        }
+        li::after{
+            content:">>";
+        }
+        li::before{
+            content:"*";
+        }
+        li:last-child::after{
+            content: "";
+        }
+        li::selection{
+            color:greenyellow;
+        }
+        input::placeholder{
+            color:brown;
+        }
+    </style>
+</head>
+<body>
+    <p id="data">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa iste voluptatum dolor itaque nulla assumenda similique, neque maiores deserunt. Inventore tempore commodi nesciunt cupiditate saepe ea accusamus temporibus dolore magnam, aliquam nulla nemo necessitatibus at eligendi reprehenderit deleniti quibusdam delectus obcaecati. Voluptates corporis enim fugit ut pariatur tenetur, ea, ad a sapiente laudantium non? Aspernatur laborum modi obcaecati, id ex vel odio accusamus expedita a reiciendis soluta asperiores. Deleniti saepe aliquam perspiciatis a pariatur, assumenda possimus molestias eum cum nesciunt soluta libero. Quia, obcaecati. Accusantium praesentium labore, fugit architecto cumque amet libero atque sapiente impedit iusto odio, facere quae inventore.
+    </p>
+    <p id="info"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa iste voluptatum dolor itaque nulla assumenda similique, neque maiores deserunt. Inventore tempore commodi nesciunt cupiditate saepe ea accusamus temporibus dolore magnam, aliquam nulla nemo necessitatibus at eligendi reprehenderit deleniti quibusdam delectus obcaecati. Voluptates corporis enim fugit ut pariatur tenetur, ea, ad a sapiente laudantium non? Aspernatur laborum modi obcaecati, id ex vel odio accusamus expedita a reiciendis soluta asperiores. Deleniti saepe aliquam perspiciatis a pariatur, assumenda possimus molestias eum cum nesciunt soluta libero. Quia, obcaecati. Accusantium praesentium labore, fugit architecto cumque amet libero atque sapiente impedit iusto odio, facere quae inventore.
+    </p>
+    <input type="text" placeholder="name">
+    <ol>
+        <li>WebDev</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JS</li>
+        <li>Bootsrap</li>
+    </ol>
+</body>
+</html>

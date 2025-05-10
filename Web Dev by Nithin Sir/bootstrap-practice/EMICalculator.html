@@ -63,7 +63,7 @@
             <button class="btn btn-primary " id = "calBtn" onclick="calValue()">Calculate</button>
         </div>
 
-        <p id = "result">EMI Amount is : <span id="calculatedEMI" style="color:red"></span> for <span id="calculateMonth"></span>months</p>
+        <p id = "result"  style="display: none;">EMI Amount is : <span id="calculatedEMI" style="color:red"></span> for <span id="calculateMonth"></span>months</p>
         <script>
             
             let r1 = document.getElementById("r1")
@@ -98,7 +98,9 @@
                     "style" : "currency",
                     "currency" : "INR"
                 }
+                // emi = emi.toFixed(2)
                 emi = emi.toLocaleString("en-IN",object)
+                document.getElementById("result").className = "d-flex justify-content-center"; 
                 document.getElementById("calculatedEMI").textContent = emi;
                 document.getElementById("calculatedEMI").style.fontWeight= "bold";
                 document.getElementById("calculateMonth").textContent = n*12;

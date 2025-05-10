@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str1 = 'sachin'//used internally by Js
+        let str2 = "kohli"
+        let str3 = `dhoni`//used by developers for template Binding
+        
+        
+
+        console.log(typeof str1, typeof str2, typeof str3);
+        console.log(str1, str2, str3);
+        
+        function doTask() {
+            let userName = prompt("Enter name ");
+            let userAge = prompt("Enter name ");
+            console.log(`Hello ${userName} Your age is ${userAge} Status: ${userAge>18 ? 'Major' : 'Minor'}`);
+
+            
+        }
+        function doOneMoreTask(user) {
+            return `Hello ${user}`;
+        }
+
+        function printByHighlighting(strings, value) {
+            console.log("call Is made...");
+            return `${strings[0]}<b>${value}</b> ${strings[1]}`;
+        }
+
+        doTask``; //can be used to do function call
+        document.write(`Greeting MSG: ${doOneMoreTask('Dhoni')}`);
+
+        let name = 'Javascript' ;
+        document.write(printByHighlighting`Learn ${name} from PWIOI`)
+         
+        
+        
+     </script>
+    
+
+</body>
+</html>

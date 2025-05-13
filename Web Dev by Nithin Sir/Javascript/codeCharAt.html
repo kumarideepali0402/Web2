@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <dl>
+        <dt>Username</dt>
+        <dd><input type="text" onblur="validateFirstCase()" id="userName"></dd>
+        <div id="errMsg"></div>
+    </dl>
+    <script>
+        function validateFirstCase() {
+            const userName = document.getElementById("userName")
+            const first = userName.value.charCodeAt(0);
+            const msg = document.getElementById("errMsg")
+            if (first >= 65 && first <=90) {
+                msg.innerHTML="";
+                
+            } else {
+                msg.innerHTML="UserName should start with uppercase";
+            }
+                
+            
+        }
+
+
+    </script>
+
+</body>
+</html>

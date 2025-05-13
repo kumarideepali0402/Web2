@@ -7,17 +7,35 @@
 </head>
 <body>
     <dt>OTP</dt>
-    <dd><input type="text" id="textOtp"><dd>
-    <div class="msg"></div>
-    <script>
-        textOtp = document.querySelector("#textOtp");
-        otpVal = textOtp.value;
-        
-        if (otpVal==='1423') {
-            
+    <dd><input type="text" id="textOtp" onblur="checkOTP()"><dd>
+    <div id="msg"></div>
 
+    <dt>UserNAMe</dt>
+    <dd><input type="text" id="textOtp" onblur="changeUpperCase()" , placeholder="Type in UpperCase"><dd>
+
+
+
+    
+    <script>
+        function checkOTP() {
+            const textOtp = document.querySelector("#textOtp");
+            const otpVal = textOtp.value;
+            const msg = document.querySelector("#msg");
             
+            if (otpVal==='1423') {
+                msg.innerHTML = 'OTP is Valid'.fontcolor('green').fontsize(16).bold()
+            
+            }
+            else{
+                msg.textContent = 'OTP is invalid';
+                msg.style.cssText = 'color : red; font-size: 14px; font-weight : bold; font-family : Brush Script MT'
+            }
+
         }
+        function changeUpperCase() {
+            const userName = 
+        }
+        
 
     </script>
 

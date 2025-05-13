@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <dt>Username</dt>
+    <dd><input type="text" id = "#inputText" onkeyup="validateUsername()"></dd>
+    <div id="errorMsg"></div>
+
+
+    <fieldset>
+        <legend>
+            YourCommments
+        </legend>
+        <textarea name="" id="feedback" maxlength="20" onkeyup="dispRemainingLength()"></textarea>
+        <p id="lenMsg"></p>
+    </fieldset>
+</body>
+<script>
+    function validateUsername() {
+        const inputText = document.querySelector("#inputText")
+        let msg = document.qu
+
+    }
+    function dispRemainingLength() {
+        let reqdLen = 20;
+        const currLen = document.querySelector("#feedback").value.length;
+        document.querySelector('#lenMsg').innerHTML = reqdLen-currLen + "Letter Remaining"
+
+    }
+
+</script>
+</html>

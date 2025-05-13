@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body class="container-fluid justify-content-center align-items-center h-75 mt-5 w-25"> 
+    
+        <form action=""  id ="container" class="p-4 border border-3 rounded bg-light text-dark">
+            <div class="h1">UserLogin</div>
+            <div class="form-switch" id="">
+                <input type="checkbox" id="themeCheckBox" class="form-check-input" onchange="changeTheme()">Dark Theme
+
+            </div>
+            
+            <dl class="row">
+                <dt >
+                    User Name
+                </dt>
+                <dd ><input type="text" class="form-control"></dd>
+                <dt>
+                    User Name
+                </dt>
+                <dd ><input type="password" class="form-control"></dd>
+            </dl>
+            <div class="btn btn-dark" id="loginBtn">Login</div>
+       </form>
+       <script>
+        function changeTheme() {
+           const themeCheckBox = document.querySelector("#themeCheckBox")
+           const container= document.querySelector("#container")
+           const loginBtn = document.querySelector("#loginBtn")
+
+           if (themeCheckBox.checked) {
+            container.className = "p-4 border border-3 rounded bg-dark text-light"
+            loginBtn.className = "btn btn-light"
+
+            
+           } else {
+            container.className ="p-4 border border-3 rounded bg-light text-dark"
+            loginBtn.className = "btn btn-dark"
+           }
+        }
+       </script>
+
+
+    
+    
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let str ="sachintendulkar"
+            //  null, NaN -> 0 
+            // undefined -> not passing any value
+
+            //  
+        console.log(str.slice(null,null)); //empty string
+        console.log(str.slice(NaN,NaN)); // empty string
+        console.log(str.slice(NaN, undefined) );// "sachintendulkar"
+        console.log(str.slice(undefined, undefined)); // "sachintendulkar"
+        console.log(str.slice(null, undefined) );// "sachintendulkar"
+        console.log(str.slice(false, undefined)) // "sachintendulkar"
+        console.log(str.slice(false, true)) //"s"
+
+
+
+        
+
+    </script>
+</body>
+</html>

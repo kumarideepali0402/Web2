@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p id="msg"></p> -->
+    <!-- <p id="split"></p> -->
+    <script>
+        // let email = prompt("Enter email")
+        // let userName = email.substring(0, email.indexOf('@'));
+        // let domainName = email.substring(email.indexOf('@') + 1);
+
+    //     let msg = document.querySelector("#msg");
+    //     msg.innerHTML = `${ userName} & ${domainName}`
+
+    //     let str = "abc,def,ghi,jkl";
+    //     document.querySelector("#split").innerHTML = str.split(',', 2);
+    //    console.log("".split()) //['']
+    //    console.log("".split('')) //[]
+    //    console.log("sachin".split('')) //['sachin']
+    //    console.log("sachin,tendulkar".split('')) //['sachin']
+    //    console.log("sachin,tendulkar".split(true,true)) //"sachin,tendulkar"
+
+       let s = "Home|ContactUS|HELP"
+       let items = s.split('|')
+       let ul = document.createElement("ul")
+
+       let output   = function(item) {
+        let li = document.createElement("li")
+        li.textContent = item;
+        ul.appendChild(li);
+
+        
+       }
+       let body = document.getElementsByTagName("body")[0]
+       body.appendChild(ul)
+       items.forEach(output);
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

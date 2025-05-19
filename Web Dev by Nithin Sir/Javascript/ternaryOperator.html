@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<body>
+    <button class="bi bi-sort-alpha-up" onclick="toggleBtn()" id="myBtn"></button>
+    <button  onclick= "changeBtn()" id="minebtn" >SHOW</button>
+    <img src="../public/images/b2.jpg" alt="" style = "display: none;" id="image">
+
+    
+</body>
+<script>
+    function toggleBtn(){
+        let btn = document.getElementById("myBtn")
+        btn.className =  (btn.className == "bi bi-sort-alpha-up") ? "bi bi-sort-alpha-down" :"bi bi-sort-alpha-up" 
+
+    }
+    function changeBtn() {
+        const changeButton = document.querySelector("#minebtn")
+        const image = document.querySelector("#image")
+        changeButton.innerText = (changeButton.innerText == "SHOW" )? "HIDE" :"SHOW";
+        image.style.display = (image.style.display == "block")?"none":"block";
+    }
+</script>
+</html>

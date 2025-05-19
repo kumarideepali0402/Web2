@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    UserName
+    <input type="checkbox" id="check" onchange = "disable()">Disable
+    <input type="text" id="userName" >
+
+    <script>
+        function disable() {
+            const name = document.querySelector("#userName")
+            const check = document.querySelector("#check")
+            if (check.checked) {
+                name.disabled = true;
+                
+            } else {
+                  name.disabled = false;
+
+            }
+        }
+        
+
+         console.log("5 + 10 => ", 5+10);
+        console.log("3.5 + 2.5 => ", 3.5 + 2.5);
+        console.log("-1 + 4 => " , -1 + 4);
+        console.log("'3' + 2 => " , "3" + 2);
+        console.log("2 + '3' => " , 2 + '3');
+        console.log("'5'+ true => ", '5'+ true);
+        console.log("'Result: ' + 5 + 10 => ", 'Result: ' + 5 + 10);
+        console.log("5 + 10 + 'is the result'=> ", 5 + 10 + 'is the result');
+        
+
+       
+
+    </script>
+    
+</body>
+</html>

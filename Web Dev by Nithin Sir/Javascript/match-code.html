@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+</head>
+<body>
+    password:
+    <input type="text" id="password" onkeyup="verifyPassword()">
+    <div id="msg"></div>
+    <div id="star-rating" style="font-size: 1.5rem; color: gold;">☆☆☆</div>
+</body>
+<script>
+    function verifyPassword() {
+        const password = document.querySelector('#password');
+        const  msg = document.querySelector('#msg')
+        let starRating = document.querySelector('#star-rating')
+
+        if(password.value.length < 4) {
+            msg.innerHTML = "weak password".fontcolor("goldenrod")
+           
+            starRating.innerHTML = "★☆☆";
+
+        }
+        else{
+            regExp = /^(?=.*[A-Z])\w{4,16}$/
+            if(password.value.match(regExp)){
+                msg.innerHTML = "strong password".fontcolor("green")
+                starRating.innerHTML = "★★★";
+
+            }
+            else{
+               msg.innerHTML = "poor password".fontcolor("red")
+               starRating.innerHTML = "★★☆";
+
+            }
+        }
+    }
+
+    
+
+
+</script>
+</html>

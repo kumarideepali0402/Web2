@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        arr =['sachin',52,53.5,true];
+        var [Name,Age,avg,isMarried]=arr;
+        console.log(Name,Age,avg,isMarried);
+
+        var [Name,Age,avg,isMarried,isbowler]=arr;
+        console.log(Name,Age,avg,isMarried,isbowler);//sachin 52 53.5 true undefined
+
+        var [Name,Age,avg,isMarried,isbowler='cannott disclose']=arr;
+        console.log(Name,Age,avg,isMarried,isbowler);//sachin 52 53.5 true cannott disclose
+
+        let a=2,b=4
+        console.log(a,b); //2 4
+        // swapping using destructuring
+        [a,b] = [b,a]
+        console.log(a,b); //4 2
+        
+
+
+
+        // Object Destructuring
+        let user = {
+            name : 'sachin',
+            age: 52,
+            Runs : 500,
+
+        }
+        var{name,age,Runs} = user
+        console.log(name,age,Runs);
+
+        //custom Name
+        const {name:userName,age :userAge,Runs:userRun} = user;
+        console.log(userName,userAge,userRun);
+
+        //not available data
+        
+        var{name,age,Runs,isBowler} = user
+        console.log(name,age,Runs,isBowler);//sachin 52 500 undefined
+        // default message when data is not present
+        var{name,age,Runs,isBowler='confidetial'} = user
+        console.log(name,age,Runs,isBowler); //sachin 52 500 confidetial
+
+        
+        
+        
+         
+    </script>
+</body>
+</html>

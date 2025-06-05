@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+
+    <script>
+        let ans = document.querySelector("p")  
+              let A = prompt("A")
+        let B = prompt("B")
+        let C = prompt("C")
+
+        if(A == B && B == C && A == C) ans.textContent = "Equilateral"
+        else if(A== B || B ==C || A == C) ans.textContent = "Isoceles"
+        else ans.textContent = "Scalene"
+    </script>
+</body>
+</html>

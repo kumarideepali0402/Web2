@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1 = [1,"deepali",["Ranchi","Bangalore"], function()  {console.log("Studying")}]
+        console.log(arr1)//[1,"deepali",["Ranchi","Bangalore"],function()  {console.log("Studying")}]
+        console.log(arr1[8]) //undefined
+        console.log(arr1[-1]) //undefined
+        console.log(arr1[3])//{console.log("Studying")}
+         console.log(arr1[2][1])
+        arr1[3](); //IIFE(Immediately Invoked Function Expression)
+        arr1[8] = "hi"
+        console.log(arr1)//[1, 'deepali', Array(2), ƒ, empty × 4, 'hi']
+
+
+        let arr2= [10,'sachin',53.4,true];
+
+        console.log("for loop");
+        for(let i = 0; i < arr1.length;i++) {
+           console.log(arr1[i]); 
+        }
+
+        console.log("for...in  loop");
+       for (const property in arr1){
+        console.log(property);//indexes
+        console.log(arr1[property]);//element
+        
+       }
+
+       console.log("for...in  loop");
+       for(const element of arr1 ) {
+        console.log(element)//elements
+
+       }
+
+
+
+        
+    </script>
+</body>
+</html>

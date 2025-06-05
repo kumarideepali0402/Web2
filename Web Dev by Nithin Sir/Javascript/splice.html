@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //insertion
+
+        let l = ['A','B','C','D']
+        l.splice(1,0,"l","l")
+        console.log(l);//['A',"l","l",'B','C','D']
+        l.splice(1,2,"l","l")
+        console.log(l);//['A',"l","l",'D']
+
+
+        //deletion
+        l.splice(1, 2)
+        console.log(l);//['A','B','C','D']
+        
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

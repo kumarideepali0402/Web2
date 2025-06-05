@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let user = {
+        userName: 'sachin',
+        age: 51,
+        gender: 'M',
+        email: 'sachin@gmail.com',
+        isMarried: true
+       }
+       const {userName, age, ...rest}=user;
+       console.log(userName);
+       console.log(age);
+       console.log(rest);
+       
+
+    </script>
+    
+</body>
+</html>

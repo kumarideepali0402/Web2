@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr =["sachin","virat","dravid","dhoni","yuvi"]
+        console.log(arr.filter(name => name.length > 5));
+
+        users = [
+            {
+                name:"mobile",
+                price:2000,
+                available:true
+            },
+            {
+                name:"pen",
+                price:2000,
+                available:false
+            },
+            {
+                name:"gui",
+                price:2000,
+                available:true
+            },
+        ]
+
+        availableItem = users.filter(user => user.available);
+        console.log(availableItem);
+
+        totalPrice = availableItem.reduce((total, user)=> total+user.price,0)
+        console.log(totalPrice);//4000
+
+        let amount = users.filter(user => user.available).reduce((total, user)=> total+user.price,0);
+        console.log(amount);
+        
+        
+        
+        
+    </script>
+
+    
+</body>
+</html>

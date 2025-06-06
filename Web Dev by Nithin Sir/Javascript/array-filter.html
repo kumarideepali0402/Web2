@@ -36,6 +36,16 @@
 
         let amount = users.filter(user => user.available).reduce((total, user)=> total+user.price,0);
         console.log(amount);
+
+        iplTeams = ["csk","rcb","csk","rcb","csk","kkr","csk"] ;
+        //{csk:4,"rcb" :2, "kkr" : 1}
+        let result =iplTeams.reduce((obj,team) => {
+            obj[team] = (obj[team] | 0) + 1;
+            return obj;
+
+        },{})
+        console.log(result); //
+        
         
         
         

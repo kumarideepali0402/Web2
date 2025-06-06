@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("OrderTaken from customer");
+
+        let action = new Promise((resolve,reject) => {
+            flag= true;
+            setTimeout(function() {
+                if(flag) {
+                resolve("Food ois ready")
+                }
+                else{
+                    reject("Chef not avail..")
+                }
+
+            }, 1000);
+            
+        })
+
+        action.then(function(msg){
+            console.log("Status is:", msg);
+        }).catch(function(error){
+            console.log("Error status is",error);
+            
+        })
+
+
+        // async-await
+        function prepareFood() {
+            return new Promise((resolve,reject) => {
+            let flag= true;
+                setTimeout(function() {
+                    if(flag) {
+                    resolve("Food ois ready")
+                    }
+                    else{
+                        reject("Chef not avail..")
+                    }
+
+                }, 1000);
+                
+            })
+        }
+
+        async function serveFood() {
+            console.log("customer has ordered..");
+            
+            try {
+                let msg = await prepareFood();
+                console.log(msg);
+                
+
+                
+            } catch (error) {
+                console.log("Status is",error)
+                
+            }
+            console.log("Customer is serving the water...");
+
+            
+
+        }
+        
+        
+    </script>
+</body>
+</html>

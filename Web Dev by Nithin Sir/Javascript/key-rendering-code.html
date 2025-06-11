@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="loadData()">
+    <script>
+        const obj ={
+            "name" : "sachin",
+            "age" : 51
+        }
+        console.log(Object.keys(obj));
+
+
+        async function loadData(){
+            try {
+                let response = await fetch("../data/product.json")
+                let products = await response.json();
+                 console.log(Object.keys(products));
+                 delete products.Ratings.Rate;
+                 delete products.Stock;
+                 console.log(products.Ratings);
+                 if("Stock" in products) {
+                    console.log(products["Stock"]);
+                }
+                else{
+                    products.Stock = "inStock";
+
+                }
+                console.log(Object.keys(products));
+
+                console.log(Object.entries(products)); ///Array of array
+                //fetching value
+                for(const [k,V] of Object.entries(products)){
+                    console.log(V);
+                    
+                }
+
+                 
+                
+            } catch (error) {
+                console.log(error);
+                
+            }
+            // delete products.Stock; //Reference Error
+            
+
+            
+
+        }
+        
+    </script>
+</body>
+</html>

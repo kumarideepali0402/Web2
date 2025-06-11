@@ -14,15 +14,12 @@
 
     <script>
         function loadData() {
-
             const URL = "../data/product.json";
             fetch(URL).then(function(response) {
                 return response.json();
             }).then(function(product){
-                console.log("Working");
-                
-          let div = document.createElement("div");  
-             
+                console.log("Working");    
+            let div = document.createElement("div");       
         div.innerHTML = `<dl class="row">
                 <dt class="col-3">
                 <img src="${product.Photo}" alt="" h-25 w-25 >

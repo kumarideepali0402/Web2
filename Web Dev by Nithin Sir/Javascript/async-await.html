@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body onload="loadData()">
     <script>
         async function loadData() {
-            try {
-                
-                const URL = "../data/product.json";
-                let response = await fetch(URL)
+            try {  
+                let response = await fetch('../data/product.json')
                 let product = await response.json();
                 let div = document.createElement("div");
                 div.innerHTML = `<dl class="row">
                     <dt class= "col-3"> 
-                        <img src="${product.Photo}" class="h-25 w-25"> </img>
+                        <img src="${product.Photo}" class="h-100 w-100"> </img>
                     </dt>
                     <dt class="col-7">
                         <h1>${product.Title}</h1>
-                        <p  bg-success text-white>
+                        <p  class='bg-success text-white>
                             <span>${product.Ratings.Rate}</span>
                             <span class="bi bi-star-fill"></span>
                             <span>${product.Ratings.Number}</span>
@@ -38,7 +38,6 @@
                     </dt>
                     <dt class="col-2">
                         <p>${product.Price}</p>
-
                     </dt>
                 </dl>
                 `;

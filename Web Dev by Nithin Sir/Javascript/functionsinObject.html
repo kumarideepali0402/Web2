@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="loadData()">
+    <script>
+        function loadData(){
+             const obj = {
+            "name" : "TV",
+            "qty" : 2,
+            price : 35000,
+            total  :function()  { return this.qty * this.price },
+            print: function(){
+                document.write(
+                `
+            price is: ${this.total()}
+
+            `)
+
+            }
+
+
+
+        }
+        obj.price = parseFloat(prompt("Enter price"));
+        obj.qty = parseFloat(prompt("Enter qty"));
+        obj.print();
+
+        }
+       
+
+    </script>
+</body>
+</html>

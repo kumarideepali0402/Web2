@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ref = new Map();
+        ref.set("h","k");
+        console.log(ref);
+        ref.set(true, 7);
+        console.log(ref);
+        ref.set(6, "Dk");
+        console.log(ref);
+
+ 
+        console.log("***Before Deletion****");
+         console.log(ref);
+
+        if(ref.has(true)){
+            ref.delete(true)
+        }
+
+        console.log("***After Deletion****");
+        console.log(ref);
+        console.log(ref.get(6));
+        console.log(ref.size);
+        console.log(ref.keys);
+        console.log(ref.values);
+        console.log(ref.entries);
+
+
+        var map = new Map([
+            ["name","sachin"],["isMarried",true],["Age",51]
+        ]);
+
+        console.log(map);
+
+        var key = {"a":1,"b":2};
+        map.set(key,"hello");
+        
+          console.log(map);
+          console.log(map.get());
+
+
+
+        
+    </script>
+</body>
+</html>

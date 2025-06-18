@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    
+</head>
+<body onload="loadData()">
+    <header>
+        <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+            <div class="container ">
+                <a href="#" class="navbar-brand text-light fw-bolder fs-3 ">FakeStore</a>
+                
+                <div class="collapse navbar-collapse  " id="navbarNav">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item" ><a class=" nav-link active  " href="#home">Home</a></li>
+                        <li class="nav-item" ><a class=" nav-link" href="#about">Electronics</a></li>
+                        <li class="nav-item" ><a class=" nav-link" href="#skills">Jewelery</a></li>
+                        <li class="nav-item" ><a class=" nav-link" href="#">MensClothing</a></li>
+                        <li class="nav-item" ><a class=" nav-link" href="#">WomenClothing</a></li>
+                    </ul>
+                    
+                </div>
+                <button class="btn btn-warning">Your Cart</button>
+                
+            </div>
+        </nav>
+    </header>
+    <article class="bg-dark m-2 text-white d-flex align-items-center justify-content-center p-2" >
+        <span class="bi bi-lightning-fill"></span>Holiday Deals  50% OFF Limited Offer <span class="bi bi-lightning-fill"></span>
+
+
+    </article>
+    <section class="row vh-100" >
+        <nav class="col-2 border border-1 border-black m-2">
+            Select Categories 
+            <select name="" id="lstCategories" class="w-100" onchange="filterProduct()">
+                
+            </select>
+        </nav>
+        <main class="col-9 border border-1 overflow-auto flex-wrap d-flex" id="items" >
+
+        </main>
+    </section>
+    <script>
+        async function displayCategories() {
+            try {
+                const response = await fetch("https://fakestoreapi.com/products/categories");
+                const categories = await response.json();
+
+                categories.unshift("ALL");
+                categories.forEach(category => {
+                let option = document.createElement("option");
+                option.value = category;
+                option.textContent = category.toUpperCase();
+
+                document.getElementById("lstCategories").appendChild(option);
+            
+           });
+                
+            } catch (error) {
+                console.log(error);
+                
+                
+            }
+           
+
+        }
+
+        async function displayProduct(URL) { 
+            document.getElementById("items").innerHTML=""
+            // const URL = "https://fakestoreapi.com/products";
+            const response = await fetch(URL);
+            const products = await response.json();
+
+
+            products.forEach((product) => {
+                let div = document.createElement("div");
+                div.style.display="inline-block";
+                div.style.width="300px";
+                div.className="card m-2 p-2"
+                
+                div.innerHTML = 
+                `
+                <img src="${product.image}" alt="" class="card-img-top p-3"  height="100">
+                <div class="card-header" height="180">
+                    <p>${product.title}</p>
+                </div>
+
+                <div class="card-body" height="150px">
+                    <dl>
+                        <dt>Price</dt>
+                        <dd>${product.price}</dd>
+                    </dl>
+                    <dl>
+                        <dt>${product.rating.rate}</dt>
+                        <dd>${product.rating.count}</dd>
+                    </dl>
+        
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-danger w-100">
+                        ADD TO CART
+                    </button>
+                </div>
+        
+       `;
+
+        document.getElementById("items").appendChild(div);
+
+
+        
+            })
+            
+        }
+
+        function filterProduct(){
+            let data = document.getElementById("lstCategories");
+            let URL = undefined;
+            if(data.value == "ALL"){
+                URL = 'https://fakestoreapi.com/products/';
+
+            }
+            else{
+             URL = `https://fakestoreapi.com/products/category/${data.value}`
+            }
+            displayProduct(URL);
+        }
+        function loadData(){
+            displayCategories();
+            displayProduct("https://fakestoreapi.com/products/");
+        }
+
+    </script>
+</body>
+</html>

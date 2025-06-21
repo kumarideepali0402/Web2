@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="removemsg2()">cancel</button>
+    <h1 class="msg"></h1>
+    <script>
+        function PrintMsg1(name){
+            document.querySelector(".msg").textContent=`Hi ${name}`;
+        }
+
+        function PrintMsg2(name){
+            document.querySelector(".msg").textContent=`Hello ${name}`;
+        }
+
+        function PrintMsg3(name){
+            document.querySelector(".msg").textContent=`By ${name}`;
+        }
+
+        setTimeout(PrintMsg1, 3000, "Deepali");
+        msg2 = setTimeout(PrintMsg2, 6000, "Deepali");
+        setTimeout(PrintMsg3, 9000, "Deepali");
+
+        function removemsg2(){
+            clearInterval(msg2);
+        }
+
+    </script>
+</body>
+</html>

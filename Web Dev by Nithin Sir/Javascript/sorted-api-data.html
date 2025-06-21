@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body onload="loadData()">
+    <table class="table">
+        <thead >
+            <tr>
+                <th>name</th>
+                <th>email</th>
+                <th>country</th>
+                <th>company</th>
+                <th>image</th>
+
+            </tr>
+            
+
+        </thead>
+        <tbody>
+
+        </tbody>
+    
+    </table>
+    <script>
+        const URL = "http://fake-json-api.mock.beeceptor.com/users";
+
+        async function loadData() {
+            const response = await fetch(URL);
+            const users = await response.json();
+              users.sort((a, b) => a.name.localeCompare(b.name));
+
+            users.forEach(user => {
+                let tr = document.createElement("tr");
+                let tbody = document.getElementsByTagName("tbody")[0];
+                
+
+                let tdName = document.createElement("td");
+                let tdEmail =document.createElement("td");
+                let tdCountry = document.createElement("td");
+                let tdCompany = document.createElement("td");
+                let tdImage =document.createElement("td");
+
+                tdName.textContent= user.name;
+                tdEmail.textContent= user.email;
+                tdCountry.textContent= user.country;
+                tdCompany.textContent= user.company;
+                tdImage.innerHTML = `<img src = "${user.photo} "  width = "100"></img>`;
+
+                tr.appendChild(tdName);
+                tr.appendChild(tdEmail);
+                tr.appendChild(tdCountry);
+                tr.appendChild(tdCompany);
+                tr.appendChild(tdImage);
+
+                tbody.append(tr);
+
+
+                
+            });
+
+        }
+    </script>
+
+    
+</body>
+</html>

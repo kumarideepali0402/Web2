@@ -20,6 +20,20 @@
         }
 
         console.log("id of product", product[ID])
+
+        const ID1 = Symbol("Abc")
+        const ID2 = Symbol("XYZ")
+        let product2 ={
+            "name":"TV",
+            "size":100,
+            [ID1]:12,
+            [ID2]:23
+
+        }
+        console.log(ID1 == ID2)
+        console.log(ID1 == ID2)
+
+
     </script>
 </body>
 </html>

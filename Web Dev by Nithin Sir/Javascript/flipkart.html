@@ -26,6 +26,7 @@
                     
                 </div>
                 <button class="btn btn-warning">Your Cart</button>
+                <span class="bg bg-danger rounded position-absolute m-2 p-2 top-100 left-0 start-0">0</span>
                 
             </div>
         </nav>
@@ -80,13 +81,13 @@
 
             products.forEach((product) => {
                 let div = document.createElement("div");
-                div.style.display="inline-block";
+               
                 div.style.width="300px";
                 div.className="card m-2 p-2"
                 
                 div.innerHTML = 
                 `
-                <img src="${product.image}" alt="" class="card-img-top p-3"  height="100">
+                <img src="${product.image}" alt="" class="card-img-top p-3 w-50  "  height="100">
                 <div class="card-header" height="180">
                     <p>${product.title}</p>
                 </div>

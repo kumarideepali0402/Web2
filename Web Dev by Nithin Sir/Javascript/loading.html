@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        @keyframes Zoomin {
+            from{
+                height: 50px;
+                width: 50px;
+                rotate: 0deg;
+
+            }
+            to{
+                 height: 50px;
+                width: 50px;
+                rotate: 360deg;
+
+            }
+            
+        }
+    </style>
+
+</head>
+<body class="container-fluid d-flex justify-content-center flex-column h-24 w-25">
+    <button class="btn btn-primary" id="button" onclick="loadData()"> Load Image</button>
+    <input type="range" min="0" max="100" value="0" id="progress" style="display: none;">
+    <div id="msg"></div>
+    <img src="../public/images/b2.jpg" alt="" style="display: none;" id="img">
+    <script>
+        const button = document.getElementById("button");
+        const progress = document.getElementById("progress");
+        const msg = document.getElementById("msg");
+        const img = document.getElementById("img");
+
+
+        var count = 0;
+        function runProgress(){
+                progress.value = count++;
+                msg.textContent = count;
+            }
+             
+            
+
+        function loadData(){
+            button.style.display="none";
+            progress.style.display="block";
+            setInterval(runProgress, 1000);
+            if(count == 10){
+                progress.display="none";
+                img.display="block";
+                img.style.animation="Zoomin 2s"
+                
+
+                
+            }
+
+           
+            
+            
+
+        }
+
+
+
+    </script>
+</body>
+</html>

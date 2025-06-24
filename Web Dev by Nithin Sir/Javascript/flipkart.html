@@ -10,8 +10,8 @@
     
 </head>
 <body onload="loadData()">
-    <header>
-        <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+    <header class="">
+        <nav class="navbar navbar-expand-lg  navbar-dark bg-dark position-sticky top-0 z-1">
             <div class="container ">
                 <a href="#" class="navbar-brand text-light fw-bolder fs-3 ">FakeStore</a>
                 
@@ -25,29 +25,66 @@
                     </ul>
                     
                 </div>
-                <button class="btn btn-warning">Your Cart</button>
-                <span class="bg bg-danger rounded position-absolute m-2 p-2 top-100 left-0 start-0">0</span>
-                
+                <div class="">
+                    <button class="btn btn-warning" data-bs-target="#exampleModal" data-bs-toggle="modal"  onclick="displayCartItems()">Your Cart</button>
+                    <span class="bg-danger text-white p-2 rounded-circle position-absolute top-0" id="count">0</span>
+
+                </div>
             </div>
+
         </nav>
+        <div class="modal fade modal-xl" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                            </div>
+                                <div class="modal-body">
+                                   <table border="1" cellspacing="10" cellpadding="10">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Product</th>
+                                                <th></th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody id="modalBody">
+
+                                        </tbody>
+                                   </table>
+                                </div>
+                            <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Make Payment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
     <article class="bg-dark m-2 text-white d-flex align-items-center justify-content-center p-2" >
         <span class="bi bi-lightning-fill"></span>Holiday Deals  50% OFF Limited Offer <span class="bi bi-lightning-fill"></span>
 
 
     </article>
-    <section class="row vh-100" >
-        <nav class="col-2 border border-1 border-black m-2">
+    
+    <section class="row" >
+        <nav class="col-2">
             Select Categories 
             <select name="" id="lstCategories" class="w-100" onchange="filterProduct()">
                 
             </select>
         </nav>
-        <main class="col-9 border border-1 overflow-auto flex-wrap d-flex" id="items" >
+        <main class="col-10 d-flex flex-wrap" id="items" >
 
         </main>
     </section>
     <script>
+        var cart = [];
         async function displayCategories() {
             try {
                 const response = await fetch("https://fakestoreapi.com/products/categories");
@@ -104,7 +141,7 @@
         
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-danger w-100">
+                    <button class="btn btn-danger w-100" onclick="addToCart(${product.id})">
                         ADD TO CART
                     </button>
                 </div>
@@ -136,6 +173,56 @@
             displayProduct("https://fakestoreapi.com/products/");
         }
 
+        async function addToCart(productId){
+            try {
+                const URL =`https://fakestoreapi.com/products/${productId}`;
+                let response = await fetch(URL);
+                let cartItem = await response.json();
+                console.log(response)
+    
+                cart.push(cartItem);
+                document.querySelector("#count").textContent = cart.length;
+                
+            } catch (error) {
+                console.log(error);
+                
+                
+            }
+
+
+
+        }
+
+        function displayCartItems(){
+            const tbody = document.getElementById("modalBody");
+            console.log("item entered")
+            tbody.innerHTML = '';
+
+
+            cart.forEach((product) => {
+                let tr =document.createElement("tr");
+                tr.innerHTML=`<td>${product.id}</td>
+                              <td>${product.title}</td>
+                              <td><img src = "${product.image}" height="100px" width=100px></img></td>
+                              <td><div class = "btn btn-danger" onclick = "removeItem(${product.id})">Remove</div></td>`
+ 
+                tbody.append(tr);
+
+
+            })
+
+        }
+
+        function removeItem(productId){
+            let index = cart.findIndex((item) => item.id === productId);
+            cart.splice(index, 1);
+            document.getElementById("count").textContent=cart.length
+            displayCartItems();
+        }
+
     </script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
 </body>
 </html>

@@ -10,23 +10,27 @@
             from{
                 height: 50px;
                 width: 50px;
-                rotate: 0deg;
+                transform: rotate(0);
+
 
             }
             to{
-                 height: 50px;
-                width: 50px;
-                rotate: 360deg;
+                 height: 100px;
+                width: 100px;
+                transform: rotate(360deg);
 
             }
             
         }
+        #img.animate {
+            animation: Zoomin 7s ease-in-out;
+        }
     </style>
 
 </head>
-<body class="container-fluid d-flex justify-content-center flex-column h-24 w-25">
+<body class="container-fluid d-flex justify-content-center flex-column h-24 w-25 mt-lg-2">
     <button class="btn btn-primary" id="button" onclick="loadData()"> Load Image</button>
-    <input type="range" min="0" max="100" value="0" id="progress" style="display: none;">
+    <input type="range" min="0" max="10" value="0" id="progress" style="display: none;">
     <div id="msg"></div>
     <img src="../public/images/b2.jpg" alt="" style="display: none;" id="img">
     <script>
@@ -37,25 +41,27 @@
 
 
         var count = 0;
+        let intervalid ;
         function runProgress(){
-                progress.value = count++;
-                msg.textContent = count;
+            progress.value = count++;
+            msg.textContent = count;
+            if(count === 10){
+                clearInterval(intervalid);
+                progress.style.display="none";
+                msg.style.display="none";
+                img.style.display="block";
+                img.classList.add("animate")
+                
+                
             }
-             
-            
-
+        }
+        
+        
+        
         function loadData(){
             button.style.display="none";
             progress.style.display="block";
-            setInterval(runProgress, 1000);
-            if(count == 10){
-                progress.display="none";
-                img.display="block";
-                img.style.animation="Zoomin 2s"
-                
-
-                
-            }
+            intervalid = setInterval(runProgress, 1000);
 
            
             

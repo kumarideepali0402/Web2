@@ -28,8 +28,13 @@
     </style>
 
 </head>
-<body class="container-fluid d-flex justify-content-center flex-column h-24 w-25 mt-lg-2">
-    <button class="btn btn-primary" id="button" onclick="loadData()"> Load Image</button>
+<body class="container-fluid d-flex justify-content-center flex-column h-25 w-25 mt-lg-2">
+    <div class="d-flex">
+        <button class="btn btn-primary" id="button" onclick="play()"> Start</button>
+         <button class="btn btn-danger" id="stopButton" onclick="pause()"> Stop</button>
+
+    </div>
+
     <input type="range" min="0" max="10" value="0" id="progress" style="display: none;">
     <div id="msg"></div>
     <img src="../public/images/b2.jpg" alt="" style="display: none;" id="img">
@@ -58,8 +63,8 @@
         
         
         
-        function loadData(){
-            button.style.display="none";
+        function play(){
+        \
             progress.style.display="block";
             intervalid = setInterval(runProgress, 1000);
 
@@ -67,6 +72,9 @@
             
             
 
+        }
+        function pause(){
+            clearInterval(intervalid)
         }
 
 

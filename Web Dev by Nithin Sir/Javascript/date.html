@@ -8,6 +8,9 @@
 <body>
     <script>
         var now = new Date();
+        console.log("hi");
+        
+        console.log(now.getUTCFullYear())//2025
         console.log(now);
         var d = new Date("2025-06-07");
         console.log(d);
@@ -17,10 +20,26 @@
          console.log(now.getDate());
           console.log(now.getDay());
           console.log(now.getMonth());
-          console.log(now.getFullYear());
+          console.log(now.getFullYear());//2025
           console.log(now.getHours());
           console.log(now.getMinutes());
           console.log(now.getSeconds());
+
+          let info = new Date("2025-02-30")
+          console.log(info.getDate());//send to anothwer month
+          let infos = new Date("2024-02-30")//2ofmarch
+          console.log(infos.getDate());//1 march
+
+        //   setter 
+        let D=new Date()
+        console.log("setter")
+        console.log(D.setDate("30"));
+        console.log(D)
+        console.log(D.setMonth("12"));
+        console.log(D.setFullYear("2023")); 
+        
+        
+        
          
         
     </script>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const promiseApi = new Promise(function(resolve, reject){
+            const url = prompt("Enter the url");
+            if(url === ""){
+                resolve(url);
+            }
+            else{
+                reject("failed");
+            }
+        })
+
+        promiseApi.then((response)=>{
+            let urlRes= fetch(response);
+            console.log(urlRes);
+
+            urlRes.then((response)=>{
+                return response.json()
+            }).catch(function(data){
+                console.log(data);
+            })
+            
+            
+        }).catch((rej)=>{
+            console.log(rej);
+            
+
+        }).finally(()=>{
+            console.log("done");
+            
+        })
+        
+
+
+        //  async await
+       
+
+        async function promiseApi2(input){
+            try{
+                if(input ==="abc"){
+                    const res = await fetch(URL);
+                    const response = await res.json();
+                    console.log(response);
+
+                }
+
+            }
+            catch(err){
+                console.log(err);
+                
+            }
+
+            
+
+            
+        }
+        promiseApi2(prompt("enter url"))
+
+
+
+    </script>
+    
+</body>
+</html>

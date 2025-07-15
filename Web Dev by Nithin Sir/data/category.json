@@ -1,0 +1,12 @@
+[
+    {
+        "product" : "Electronics",
+        "items" : ["tv", "mobile","watch"]
+
+    },
+    {
+        "product" : "Clothes",
+        "items" : ["Men's", "Women's","Kids"]
+
+    }
+]

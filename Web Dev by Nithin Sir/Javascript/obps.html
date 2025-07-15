@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset{
+            height: 200px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Connect with database</legend>
+        <dl>
+            <dt>Select database</dt>
+            <dd>
+                <select name="" id="dbSelect" >
+                    <option value="-1" >SELECT DATABASE</option>
+                    <option value="MySQl" >MySQl</option>
+                    <option value="Oracle" >Oracle </option>
+                    <option value="MongoDB" >MongoDB</option>
+
+                </select>
+            </dd>
+
+            <dt>Select Action</dt>
+            <dd>
+                <button onclick="dbOperation('insert')">Insert</button>
+                <button onclick="dbOperation('update')">Update</button>
+                <button onclick="dbOperation('delete')">Delete</button>
+            </dd>
+        </dl>
+    </fieldset>
+    <div id="msg">
+
+    </div>
+    <script>
+        class _Database{
+            _database = "";
+            insert(){
+                return `Action on ${this._database} : Record inserted  `
+            }
+            update(){
+                return `Action on ${this._database} : Record updated  `
+            }
+            delete(){
+                return `Action on ${this._database} : Record deleted  `
+            }
+
+
+        }
+        function dbOperation(action){
+            obj = new _Database();
+            db_name =  document.getElementById("dbSelect").value;
+            obj._database= db_name;
+            const msg = document.getElementById("msg");
+            let actual_msg="";
+            if(action==='insert'){
+                actual_msg = obj.insert();
+                
+            }
+            else if(action==='update'){
+                actual_msg = obj.update();
+
+            }
+            else{
+                actual_msg = obj.delete();
+
+            }
+            msg.textContent = actual_msg; 
+        }
+    </script>
+</body>
+</html>

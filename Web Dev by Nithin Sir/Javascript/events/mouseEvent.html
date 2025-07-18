@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        section{
+            display: grid;
+            grid-template-columns: 2fr 10fr;
+        }
+        .highlight{
+            border: 3px solid blue;
+            cursor: pointer;
+
+        }
+        .zoomin{
+            height: 500px;
+            width: 500px;
+            transition: 1s;
+
+        }
+        .zoomout{
+            height: 300px;
+            width: 300px;
+            transition: 1s;
+
+
+        }
+    </style>
+</head>
+<body>
+    <!-- onmouseover onmouseup onmousedown -->
+    <section id="img-section">
+        <nav>
+            <div>
+                <img src="../../public/images/iphone.png" alt="" height="80px" width="80px" 
+                    onmouseover="displayImg(this)" >
+            </div>
+            <div>
+                <img src="../../public/images/iphonelower.png" alt="" 
+                height="80px" width="80px" onmouseover="displayImg(this)" >
+            </div>
+
+        </nav>
+        <main  style="overflow: hidden; height: 300px; width: 300px;">
+            <img src="../../public/images/iphone.png"  border="1" height="300px" width="300px" 
+            onmouseup="zoomOut(this)" onmousedown="zoomIn(this)" >
+        </main>
+
+
+
+    </section>
+    <script>
+        function displayImg(imgs){
+
+            document.querySelector("main img").src = imgs.src;
+            document.querySelectorAll("nav img").forEach((im)=>{
+                im.style.border= "3px solid transparent";
+            });
+
+            imgs.style.border="3px solid blue";
+
+        }
+        function zoomOut(viewImg){
+            console.log("zoomOut reached");
+            viewImg.classList.remove("zoomin");
+            viewImg.classList.add("zoomout");
+        }
+        function zoomIn(viewImg){
+            console.log("zoomin reached");
+            viewImg.classList.remove("zoomout");
+            viewImg.classList.add("zoomin");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- When user clicks over purse it's price should be made visible -->
+    <img src="https://image.freepik.com/free-photo/woman-with-bag_1303-12943.jpg" alt="" onclick="showPrice(event)">
+    <p id="price"></p>
+
+    <script>
+        function showPrice(e){
+            console.log(e.clientX); // 185-408
+            console.log(e.clientY); // 300-445
+
+            if(e.clientX>= 185 && e.clientX<=408 && e.clientY>=300 && e.clientY<=445){
+                document.getElementById("price").innerHTML = "<h1>Rs. 6500</h1>";
+            }
+        
+        }
+    </script>
+
+</body>
+</html>

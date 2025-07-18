@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" onclick="disp('IPHONE',['BLR', 'HYD'], 4.5,event) ">DisplayInfo</button>
+    <img src="../../public/images/b2.jpg" alt=""  class="img">
+
+    <script>
+        function disp(...params){
+            const  ul = document.createElement("ul");
+            const [product, cities, rating, e]=params;
+
+            const liProduct = document.createElement("li");
+            liProduct.textContent = product;
+            const liCities  = document.createElement("li");
+            liCities.textContent = cities;
+            const liRating = document.createElement("li");
+            liRating.textContent = rating;
+            
+            
+            ul.append(liProduct,liCities, liRating)
+
+           document.body.appendChild(ul);
+        }
+    </script>
+</body>
+</html>

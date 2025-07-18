@@ -38,40 +38,63 @@
 
     </div>
     <script>
-        class _Database{
-            _database = "";
-            insert(){
-                return `Action on ${this._database} : Record inserted  `
-            }
-            update(){
-                return `Action on ${this._database} : Record updated  `
-            }
-            delete(){
-                return `Action on ${this._database} : Record deleted  `
-            }
+        // class _Database{
+        //     _database = "";
+        //     insert(){
+        //         return `Action on ${this._database} : Record inserted  `
+        //     }
+        //     update(){
+        //         return `Action on ${this._database} : Record updated  `
+        //     }
+        //     delete(){
+        //         return `Action on ${this._database} : Record deleted  `
+        //     }
 
 
-        }
-        function dbOperation(action){
-            obj = new _Database();
-            db_name =  document.getElementById("dbSelect").value;
-            obj._database= db_name;
-            const msg = document.getElementById("msg");
-            let actual_msg="";
-            if(action==='insert'){
-                actual_msg = obj.insert();
+        // }
+        // function dbOperation(action){
+        //     db_name =  document.getElementById("dbSelect").value;
+        //     const msg = document.getElementById("msg");
+
+        //     obj = new _Database();
+        //     obj._database= db_name;
+
+        //     let actual_msg="";
+        //     if(action==='insert'){
+        //         actual_msg = obj.insert();
                 
-            }
-            else if(action==='update'){
-                actual_msg = obj.update();
+        //     }
+        //     else if(action==='update'){
+        //         actual_msg = obj.update();
 
-            }
-            else{
-                actual_msg = obj.delete();
+        //     }
+        //     else{
+        //         actual_msg = obj.delete();
 
+        //     }
+        //     msg.textContent = actual_msg; 
+        // }
+
+        class _Database{
+            constructor (dbName, action){
+                this._dbName = dbName;
+                this._action = action;
             }
-            msg.textContent = actual_msg; 
+            getMessage(){
+                return `Action on ${this._dbName}: Record ${this._action}ed`
+            }
         }
+        function dbOperation(action) {
+            const db_name = document.getElementById("dbSelect").value;
+            const msg = document.getElementById("msg");
+
+            const dbobj = new _Database(db_name,action);
+            msg.textContent = dbobj.getMessage();
+
+
+        }
+
+        
     </script>
 </body>
 </html>

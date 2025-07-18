@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <fieldset>
+        <legend>INSTALL HDFC APP</legend>
+        <div>
+            <select name="" id="lstVersions">
+                <option value="-1">Select version</option>
+                <option value="ver-1">Version1-2023</option>
+                <option value="ver-2">Version2-2024[loans]</option>
+                <option value="ver-3">Version3-2023[NRI Banking]</option>
+            </select>
+            <button id="btnInstall" onclick="displayFeatures()">Install</button>
+        </div>
+    </fieldset>
+    <script>
+        class Version1{
+            personal = 'personalBanking';
+            credit = 'creditCard';
+            print(){
+                document.write(`${this.personal} and ${this.credit}`)
+            }
+
+        }
+
+        class Version2{
+            loan = "CarLoan, EducationLoan, GOldLoan";
+            print(){
+                obj = new Version1();
+                obj.print();
+                document.write(`${this.loan}`)
+            }
+
+        }
+
+        class Version3{
+            netBanking = "netBanking is provided";
+            print() {
+                obj = new Version2();
+                obj.print();
+                document.write(`${this.netBanking}`);
+            }
+
+        }
+
+        function displayFeatures(){
+            const version=document.getElementById("lstVersions").value;
+            let obj = null;
+
+            switch (version){
+                case "ver-1":
+                    obj= new Version1();
+                    obj.print();
+                    break;
+
+                case "ver-2":
+                    obj= new Version2();
+                    obj.print();
+                    break;
+
+                
+                case "ver-3":
+                    obj= new Version3();
+                    obj.print();
+                    break;
+
+                default :
+                  document.write("Select a suitable version")
+
+
+
+
+            }
+                   
+        }
+
+    
+    </script>
+</body>
+</html>

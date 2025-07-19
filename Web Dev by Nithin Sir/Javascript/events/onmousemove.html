@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+        }
+
+    </style>
+</head>
+<body onmousemove="move(event)">
+    <!-- onmousemove -->
+     <h1>try to drag the image</h1>
+    <img src="../../public/images/b2.jpg" height="80px" width="80px" >
+    <script>
+        function move(e){
+            let img = document.querySelector("img");
+            img.style.position ="absolute";
+            img.style.top = e.clientY + "px";
+            img.style.left = e.clientX + "px";
+            console.log(e.clientX);
+            console.log(e.clientY);
+
+            
+
+        }
+    </script>
+</body>
+</html>
